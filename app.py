@@ -49,35 +49,35 @@ st.title("Simulador de Investimentos (projeção)")
 st.caption("Simulação simples de investimentos")
 
 if "travelgoals" not in st.session_state:
-    st.session_state.travelgoals = [30000, 50000, 80000]
+    st.session_state.travelgoals = []
 
 tab_inputs, tab_chart, tab_summary = st.tabs(["Inputs", "Gráfico", "Resumo"])
 
 
 with tab_inputs:
     st.subheader("Parâmetros")
-    t = st.number_input("Taxa mensal (%)", min_value=-100.0, max_value=100.0, value=1.0, step=0.1)
-    limit = st.number_input("Horizonte (meses)", min_value=1, max_value=600, value=120, step=1)
+    t = st.number_input("Taxa mensal (%)", min_value=-100.0, max_value=100.0, value=0.0, step=1.0)
+    limit = st.number_input("Horizonte (meses)", min_value=1, max_value=600, value=1, step=1)
     initial_balance = st.number_input(
         "Patrimônio inicial (R$)",
         min_value=0,
         max_value=100_000_000,
-        value=15000,
+        value=0,
         step=1000,
     )
     monthly_contribution = st.number_input(
         "Aporte mensal (R$)",
         min_value=0,
         max_value=10_000_000,
-        value=1000,
+        value=0,
         step=100,
     )
     travel_budget = st.number_input(
         "Valor de cada saque (R$)",
         min_value=0,
         max_value=10_000_000,
-        value=5000,
-        step=100,
+        value=0,
+        step=1000,
     )
 
     st.markdown("---")
@@ -92,7 +92,7 @@ with tab_inputs:
             "Adicionar meta de saque (patrimônio-alvo)",
             min_value=1,
             max_value=10_000_000,
-            value=60000,
+            value=1,
             step=1000,
         )
     with col_btn:
