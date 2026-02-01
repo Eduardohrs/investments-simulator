@@ -176,14 +176,17 @@ with tab_chart:
             xaxis_title="Mês",
             yaxis_title="Patrimônio (R$)",
             hovermode="x unified",
-            dragmode="pan",
+            dragmode=False,
             height=480,
         )
+
+        fig.update_xaxes(fixedrange=True)
+        fig.update_yaxes(fixedrange=True)
 
         st.plotly_chart(
             fig,
             use_container_width=True,
-            config={"scrollZoom": False, "displayModeBar": False},
+            config={"scrollZoom": False, "displayModeBar": False, "doubleClick": False},
         )
 
 
