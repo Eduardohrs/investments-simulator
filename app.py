@@ -70,7 +70,7 @@ with tab_inputs:
         min_value=0,
         max_value=10_000_000,
         value=0,
-        step=100,
+        step=1000,
     )
     travel_budget = st.number_input(
         "Valor de cada saque (R$)",
