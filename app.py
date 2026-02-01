@@ -81,7 +81,11 @@ with tab_inputs:
     )
 
     st.markdown("---")
-    st.subheader("Saques por meta (travelgoals)")
+    st.subheader("Saques por meta")
+    st.caption(
+        "Aqui você define valores de patrimônio-alvo. Quando o patrimônio ultrapassa uma meta, "
+        "um saque de valor fixo é feito automaticamente."
+    )
     col_add, col_btn = st.columns([2, 1])
     with col_add:
         new_goal = st.number_input(
